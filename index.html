@@ -1,123 +1,352 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio 💕</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Arial', sans-serif; 
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fad0c4 100%);
-            min-height: 100vh; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: flex-start; 
-            padding-top: 60px; 
-            overflow: hidden;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para ti ✨</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#fff7fb;
+      --bg2:#ffe7f1;
+      --bg3:#e8f4ff;
+      --ink:#5b2d43;
+      --muted:#8a5f74;
+      --primary:#ff4f93;
+      --primary-dark:#e2397d;
+      --card:rgba(255,255,255,.58);
+      --stroke:rgba(255,255,255,.55);
+      --shadow:0 18px 45px rgba(195,72,128,.18);
+      --radius:28px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      min-height:100vh;
+      font-family:'Nunito',sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,.95), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(255,182,213,.5), transparent 28%),
+        linear-gradient(135deg,var(--bg1),var(--bg2) 55%,var(--bg3));
+      overflow-x:hidden;
+    }
+    .floating-hearts span{
+      position:fixed;
+      bottom:-40px;
+      font-size:clamp(18px,2vw,26px);
+      opacity:.45;
+      animation:rise linear infinite;
+      pointer-events:none;
+      z-index:0;
+    }
+    @keyframes rise{from{transform:translateY(0) scale(.9)}to{transform:translateY(-120vh) scale(1.15)}}
+    .shell{
+      position:relative;
+      z-index:1;
+      width:min(1120px,calc(100% - 32px));
+      margin:24px auto;
+      padding:18px;
+      border:1px solid var(--stroke);
+      border-radius:36px;
+      background:rgba(255,255,255,.25);
+      backdrop-filter: blur(16px);
+      box-shadow:var(--shadow);
+    }
+    .nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      padding:10px 8px 24px;
+      flex-wrap:wrap;
+    }
+    .brand{
+      font-family:'Pacifico',cursive;
+      font-size:clamp(1.5rem,3vw,2.2rem);
+      color:var(--primary-dark);
+    }
+    .nav-links{display:flex;gap:10px;flex-wrap:wrap}
+    .chip{
+      text-decoration:none;
+      color:var(--muted);
+      background:rgba(255,255,255,.55);
+      border:1px solid rgba(255,255,255,.7);
+      padding:10px 16px;
+      border-radius:999px;
+      font-weight:700;
+      transition:.25s ease;
+    }
+    .chip:hover{transform:translateY(-2px);color:var(--primary-dark)}
+    .hero{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:24px;
+      align-items:center;
+      padding:10px;
+    }
+    .card{
+      background:var(--card);
+      border:1px solid var(--stroke);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+    .hero-copy{padding:36px}
+    .eyebrow{
+      display:inline-flex;
+      padding:8px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.7);
+      color:var(--primary-dark);
+      font-weight:800;
+      margin-bottom:18px;
+    }
+    h1{
+      font-size:clamp(2.2rem,5vw,4.8rem);
+      line-height:1.03;
+      margin-bottom:16px;
+    }
+    .hero-copy p{
+      font-size:clamp(1rem,1.8vw,1.2rem);
+      line-height:1.75;
+      color:var(--muted);
+      max-width:56ch;
+    }
+    .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+    .btn{
+      text-decoration:none;
+      border:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:50px;
+      padding:14px 24px;
+      border-radius:999px;
+      font-weight:800;
+      transition:.28s ease;
+      cursor:pointer;
+    }
+    .btn-primary{
+      background:linear-gradient(135deg,var(--primary),#ff7fb1);
+      color:#fff;
+      box-shadow:0 16px 30px rgba(255,79,147,.28);
+    }
+    .btn-secondary{
+      background:rgba(255,255,255,.72);
+      color:var(--ink);
+      border:1px solid rgba(255,255,255,.8);
+    }
+    .btn:hover{transform:translateY(-3px) scale(1.01)}
+    .hero-visual{
+      padding:22px;
+      display:grid;
+      gap:16px;
+    }
+    .hero-visual img{
+      width:100%;
+      max-width:430px;
+      margin:0 auto;
+      border-radius:28px;
+      object-fit:cover;
+      box-shadow:0 18px 40px rgba(94,51,92,.18);
+    }
+    .note{
+      padding:18px 20px;
+      background:rgba(255,255,255,.66);
+      border-radius:22px;
+      color:var(--muted);
+      line-height:1.7;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:24px;
+      padding:10px;
+    }
+    .mini{padding:24px}
+    .mini h2{font-size:1.2rem;margin-bottom:10px}
+    .mini p{color:var(--muted);line-height:1.7}
+    @media (max-width:900px){
+      .hero,.grid{grid-template-columns:1fr}
+      .hero-copy,.mini{padding:24px}
+      .shell{border-radius:24px}
+    }
+    /* ===== OPTIMIZACIÓN PARA TELÉFONO ===== */
+@media (max-width: 768px) {
+  body {
+    padding: 14px;
+  }
 
-        /* Ajuste extra para móviles (font-size menor si la pantalla es muy pequeña) */
-        @media (max-width: 480px) {
-        h1 {
-        font-size: 26px;
-        }
-        .mensaje {
-        font-size: 20px;
-        }
-        .btn {
-        padding: 14px 30px;
-        font-size: 16px;
-        }
-        }
+  .wrap,
+  .shell {
+    width: 100%;
+    padding: 16px;
+    border-radius: 22px;
+  }
 
-        body {
-        padding: 20px 15px; /* deja un pequeño márgen en móviles */
-        }
-        .particulas { 
-            position: fixed; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            pointer-events: none; 
-            z-index: 1; 
-        }
-        .particula { 
-            position: absolute; 
-            font-size: 20px; 
-            animation: float 6s infinite linear; 
-            opacity: 0.8;
-        }
-        @keyframes float { 
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; } 
-            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; } 
-        }
-        .personaje { 
-            width: 160px; 
-            height: 160px; 
-            margin-bottom: 30px; 
-            border-radius: 15px; 
-            box-shadow: 0 8px 15px rgba(255,182,193,0.6); 
-        }
-        .texto-tipo {
-        font-size: 24px; 
-        color: #d63384; 
-        line-height: 1.6; 
-        text-align: center; 
-        max-width: 400px; 
-        margin: 0 auto 20px;
-        white-space: normal;
-        overflow: hidden;
-        border-right: 2px solid #d63384;
-        animation: type 5s steps(100, end), blink 0.8s step-start infinite;
-        }
-        @keyframes type {
-        from { width: 0; }
-        to { width: 100%; }
-        }
-        @keyframes blink {
-        0%, 100% { border-color: transparent; }
-        50% { border-color: #d63384; }
-        }
-        .btn { 
-            background: linear-gradient(45deg, #ff69b4, #ff1493); 
-            color: white; 
-            border: none; 
-            padding: 15px 40px; 
-            font-size: 18px; 
-            border-radius: 50px; 
-            cursor: pointer; 
-            box-shadow: 0 8px 20px rgba(255,105,180,0.4); 
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); 
-            margin-top: 30px; 
-            font-weight: 500;
-        }
-        .btn:hover { 
-            transform: translateY(-4px); 
-            box-shadow: 0 12px 25px rgba(255,105,180,0.7); 
-        }
-    </style>
+  .hero,
+  .contenido,
+  .final,
+  .letter,
+  .grid,
+  .reasons {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+
+  .hero-copy,
+  .panel,
+  .card,
+  .mini {
+    padding: 20px !important;
+    border-radius: 22px;
+  }
+
+  h1 {
+    font-size: clamp(1.9rem, 8vw, 2.8rem) !important;
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-size: 1.15rem !important;
+  }
+
+  .lead,
+  .text,
+  .mensaje,
+  .hero-copy p,
+  .mini p,
+  .reason p {
+    font-size: 1rem !important;
+    line-height: 1.7 !important;
+  }
+
+  .nav,
+  .top {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .nav-links,
+  .links,
+  .actions,
+  .btn-row,
+  .cta,
+  .cta-row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .nav a,
+  .chip,
+  .btn,
+  .btn-main,
+  .btn-soft,
+  .btn-primary,
+  .btn-secondary,
+  .main,
+  .soft {
+    width: 100%;
+    min-height: 48px;
+    text-align: center;
+    justify-content: center;
+    font-size: 1rem !important;
+    padding: 14px 18px !important;
+  }
+
+  .brand {
+    text-align: center;
+    font-size: 1.7rem !important;
+  }
+
+  .hero-visual img,
+  .panel img,
+  .photo img,
+  .stitch img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 22px;
+  }
+
+  .quote,
+  .note,
+  .frase,
+  .destacado,
+  .highlight {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    padding: 14px 16px;
+    border-radius: 18px;
+  }
+}
+  </style>
 </head>
-
 <body>
-    <div class="particulas" id="particulas"></div>
+  <div class="floating-hearts" aria-hidden="true">
+    <span style="left:6%;animation-duration:10s">💗</span>
+    <span style="left:18%;animation-duration:13s">🌸</span>
+    <span style="left:34%;animation-duration:12s">💕</span>
+    <span style="left:52%;animation-duration:11s">💖</span>
+    <span style="left:74%;animation-duration:14s">✨</span>
+    <span style="left:88%;animation-duration:10.5s">💗</span>
+  </div>
 
-    <img src="img/stich saludando.png" alt="Monito saludando" class="personaje">
+  <main class="shell">
+    <nav class="nav">
+      <div class="brand">Para ti</div>
+      <div class="nav-links">
+        <a class="chip" href="index.html">Inicio</a>
+        <a class="chip" href="pagina2.html">Flores</a>
+        <a class="chip" href="pagina3.html">Razones</a>
+        <a class="chip" href="pagina4.html">Cartita</a>
+        <a class="chip" href="pagina5.html">Dia Nuevo, Mensaje nuevo</a>
+        <a class="chip" href="pagina6.html">Un mensajito más</a>
+        <a class="chip" href="pagina6.html">Otra cosita para ti</a>
+      </div>
+    </nav>
 
-    <div class="texto-tipo">
-        ¡Hola!, se que no te encuentras muy bien, pero para eso me crearon soy tu animador virtual, cada vez que te sientas mal vuelve me estaran actualizando costantemente, una carita triste me pone triste tambien. 💕
-    </div>
+    <section class="hero">
+      <article class="card hero-copy">
+        <div class="eyebrow">Un rinconcito hecho con cariño</div>
+        <h1>No quería algo simple, quería algo que se sintiera especial.</h1>
+        <p>
+          Hice este espacio para que cuando te sientas mal, cansada o simplemente necesites una sonrisa,
+          tengas algo bonito que abrir. No es solo una página, es una pequeña colección de detalles pensados para ti.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="pagina2.html">Empezar el recorrido</a>
+          <a class="btn btn-secondary" href="pagina5.html">Ir al mensaje final</a>
+        </div>
+      </article>
 
-    <button class="btn" onclick="continuar('pagina2.html')">
-        Empezar
-    </button>
+      <aside class="hero-visual card">
+        <img src="img/stich saludando.png" alt="Stitch saludando con ternura" width="800" height="800" loading="eager">
+        <div class="note">
+          A veces un detalle pequeño no arregla todo, pero sí puede hacer el día un poquito más bonito.
+        </div>
+      </aside>
+    </section>
 
-    <script>
-        function continuar(pagina) {
-            window.location.href = pagina;
-        }
-    </script>
+    <section class="grid">
+      <article class="card mini">
+        <h2>Tu esencia</h2>
+        <p>Hay algo en ti que no sé explicar, pero que hace que todo se sienta diferente.</p>
+      </article>
+      <article class="card mini">
+        <h2>Tu forma de ser</h2>
+        <p>No es solo lo que haces, es cómo haces que todo a tu alrededor sea más bonito.</p>
+      </article>
+      <article class="card mini">
+        <h2>Lo que provocas</h2>
+        <p>Sin darte cuenta, te volviste alguien muy especial para mí.</p>
+      </article>
+    </section>
+  </main>
 </body>
 </html>
