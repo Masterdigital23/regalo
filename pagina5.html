@@ -1,100 +1,161 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estamos actualizando 💕</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Arial', sans-serif; 
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fad0c4 100%);
-            min-height: 100vh; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center; 
-            text-align: center; 
-            overflow: hidden;
-            padding: 20px;
-        }
-        .particulas { 
-            position: fixed; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            pointer-events: none; 
-            z-index: 1; 
-        }
-        .particula { 
-            position: absolute; 
-            font-size: 20px; 
-            animation: float 6s infinite linear; 
-            opacity: 0.8;
-        }
-        @keyframes float { 
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; } 
-            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; } 
-        }
-        h1 {
-            font-size: 30px;
-            margin-bottom: 10px;
-            color: #c2185b;
-            font-weight: 600;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
-            animation: fade-in 0.9s ease-out;
-        }
-        .mensaje { 
-            font-size: 22px; 
-            color: #d63384; 
-            margin-bottom: 25px; 
-            line-height: 1.5;
-            font-weight: 500;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
-            animation: fade-in 1.1s ease-out;
-        }
-        .btn { 
-            background: linear-gradient(45deg, #ff69b4, #ff1493); 
-            color: white; 
-            border: none; 
-            padding: 15px 40px; 
-            font-size: 18px; 
-            border-radius: 50px; 
-            cursor: pointer; 
-            box-shadow: 0 8px 20px rgba(255,105,180,0.4); 
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); 
-            margin: 10px; 
-            font-weight: 500;
-        }
-        .btn:hover { 
-            transform: translateY(-4px); 
-            box-shadow: 0 12px 25px rgba(255,105,180,0.7); 
-        }
-        @keyframes fade-in {
-            0% { opacity: 0; transform: translateY(15px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Final bonito 💖</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0} body{font-family:'Nunito',sans-serif;min-height:100vh;background:radial-gradient(circle at top,rgba(255,255,255,.9),transparent 30%),linear-gradient(145deg,#fff0f6,#ffdbe9 45%,#f0ebff);color:#5b2c4a;padding:20px;overflow-x:hidden}
+    .hearts span{position:fixed;bottom:-30px;animation:up 11s linear infinite;opacity:.4;font-size:22px;pointer-events:none}.hearts span:nth-child(2){left:20%;animation-duration:13s}.hearts span:nth-child(3){left:40%;animation-duration:10s}.hearts span:nth-child(4){left:62%;animation-duration:14s}.hearts span:nth-child(5){left:84%;animation-duration:12s}.hearts span:nth-child(1){left:8%}@keyframes up{from{transform:translateY(0)}to{transform:translateY(-120vh)}}
+    .wrap{position:relative;z-index:1;max-width:980px;margin:0 auto;background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.72);backdrop-filter:blur(16px);border-radius:38px;padding:22px;box-shadow:0 18px 48px rgba(154,98,138,.15)}
+    .nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:24px}.brand{font-family:'Pacifico',cursive;font-size:2rem;color:#e13b83}.nav a{text-decoration:none;background:rgba(255,255,255,.74);padding:10px 16px;border-radius:999px;color:#7d6072;font-weight:800}
+    .final{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:center}.panel{background:rgba(255,255,255,.66);border:1px solid rgba(255,255,255,.8);border-radius:30px;padding:26px;box-shadow:0 14px 36px rgba(167,112,153,.12)}
+    .panel img{width:100%;border-radius:28px;box-shadow:0 18px 42px rgba(129,92,142,.18)}
+    h1{font-size:clamp(2.2rem,4.5vw,4.4rem);line-height:1.02;margin-bottom:14px}.lead{font-size:1.08rem;line-height:1.85;color:#775f71}.highlight{margin-top:18px;padding:16px 18px;border-radius:22px;background:linear-gradient(135deg,#fff0f7,#ffe1ef);font-weight:800;color:#d93f83}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.btn{text-decoration:none;padding:13px 18px;border-radius:999px;font-weight:800}.main{background:linear-gradient(135deg,#ff4f93,#ff7ab0);color:#fff}.soft{background:#fff;color:#5c4352}
+    @media (max-width:860px){.final{grid-template-columns:1fr}.wrap{border-radius:24px}}/* ===== OPTIMIZACIÓN PARA TELÉFONO ===== */
+@media (max-width: 768px) {
+  body {
+    padding: 14px;
+  }
+
+  .wrap,
+  .shell {
+    width: 100%;
+    padding: 16px;
+    border-radius: 22px;
+  }
+
+  .hero,
+  .contenido,
+  .final,
+  .letter,
+  .grid,
+  .reasons {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+
+  .hero-copy,
+  .panel,
+  .card,
+  .mini {
+    padding: 20px !important;
+    border-radius: 22px;
+  }
+
+  h1 {
+    font-size: clamp(1.9rem, 8vw, 2.8rem) !important;
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-size: 1.15rem !important;
+  }
+
+  .lead,
+  .text,
+  .mensaje,
+  .hero-copy p,
+  .mini p,
+  .reason p {
+    font-size: 1rem !important;
+    line-height: 1.7 !important;
+  }
+
+  .nav,
+  .top {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .nav-links,
+  .links,
+  .actions,
+  .btn-row,
+  .cta,
+  .cta-row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .nav a,
+  .chip,
+  .btn,
+  .btn-main,
+  .btn-soft,
+  .btn-primary,
+  .btn-secondary,
+  .main,
+  .soft {
+    width: 100%;
+    min-height: 48px;
+    text-align: center;
+    justify-content: center;
+    font-size: 1rem !important;
+    padding: 14px 18px !important;
+  }
+
+  .brand {
+    text-align: center;
+    font-size: 1.7rem !important;
+  }
+
+  .hero-visual img,
+  .panel img,
+  .photo img,
+  .stitch img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 22px;
+  }
+
+  .quote,
+  .note,
+  .frase,
+  .destacado,
+  .highlight {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    padding: 14px 16px;
+    border-radius: 18px;
+  }
+}
+  </style>
 </head>
-
 <body>
-    <div class="particulas" id="particulas"></div>
-
-    <h1>Estamos en mantenimiento 💕</h1>
-    <div class="mensaje">
-        Por ahora estamos actualizando y mejorando este espacio especial.<br>
-        Vuelve pronto, algo bonito te estará esperando.
+  <div class="hearts" aria-hidden="true">
+    <span>💗</span><span>💕</span><span>🌸</span><span>💖</span><span>✨</span>
+  </div>
+  <main class="wrap">
+    <div class="nav">
+      <div class="brand">Dia Nuevo, Mensaje nuevo</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a href="pagina4.html">Anterior</a>
+        <a href="pagina6.html">Siguiente</a>
+      </div>
     </div>
 
-    <button class="btn" onclick="continuar('index.html')">
-        Volver al inicio
-    </button>
-
-    <script>
-        function continuar(pagina) {
-            window.location.href = pagina;
-        }
-    </script>
+    <section class="contenido">
+      <article class="panel">
+        <h1>Ojalá esta página te saque aunque sea una sonrisita.</h1>
+        <p class="lead">No soy muy bueno diciendo todo lo que siento, pero quería hacer algo que lo demostrara de otra forma… algo que, aunque sea un poco, te haga sentir lo especial que eres para mí.</p>
+        <div class="highlight">Lo más valioso no es que la página sea perfecta, sino que se nota que la hiciste pensando en ella.</div>
+        <div class="actions">
+          <a class="btn main" href="pagina6.html">Continuar</a>
+          <a class="btn soft" href="index.html">Inicio</a>
+        </div>
+      </article>
+      <div class="panel">
+        <img src="img/stich dando rosa act.png" alt="Stitch con una rosa y corazones" width="736" height="736" loading="eager">
+      </div>
+    </section>
+  </main>
 </body>
 </html>
