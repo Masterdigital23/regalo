@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Un mensajito más 💖</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,0.9), transparent 30%),
+        linear-gradient(145deg, #fff4f8, #ffe0ec 45%, #f0ecff);
+      color: #5b2c4a;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    .corazones span {
+      position: fixed;
+      bottom: -30px;
+      animation: subir 12s linear infinite;
+      opacity: 0.4;
+      font-size: 22px;
+      pointer-events: none;
+    }
+
+    .corazones span:nth-child(1) { left: 8%; animation-duration: 11s; }
+    .corazones span:nth-child(2) { left: 24%; animation-duration: 14s; }
+    .corazones span:nth-child(3) { left: 42%; animation-duration: 10s; }
+    .corazones span:nth-child(4) { left: 65%; animation-duration: 13s; }
+    .corazones span:nth-child(5) { left: 84%; animation-duration: 12s; }
+
+    @keyframes subir {
+      from { transform: translateY(0); }
+      to { transform: translateY(-120vh); }
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 980px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.55);
+      border: 1px solid rgba(255,255,255,0.72);
+      backdrop-filter: blur(16px);
+      border-radius: 38px;
+      padding: 22px;
+      box-shadow: 0 18px 48px rgba(154,98,138,0.15);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .brand {
+      font-family: 'Pacifico', cursive;
+      font-size: 2rem;
+      color: #e13b83;
+    }
+
+    .nav a {
+      text-decoration: none;
+      background: rgba(255,255,255,0.74);
+      padding: 10px 16px;
+      border-radius: 999px;
+      color: #7d6072;
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
+
+    .nav a:hover {
+      transform: translateY(-2px);
+      color: #e13b83;
+    }
+
+    .contenido {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .panel {
+      background: rgba(255,255,255,0.66);
+      border: 1px solid rgba(255,255,255,0.8);
+      border-radius: 30px;
+      padding: 26px;
+      box-shadow: 0 14px 36px rgba(167,112,153,0.12);
+    }
+
+    .panel img {
+      width: 100%;
+      border-radius: 28px;
+      box-shadow: 0 18px 42px rgba(129,92,142,0.18);
+    }
+
+    h1 {
+      font-size: clamp(2.1rem, 4.4vw, 4.2rem);
+      line-height: 1.05;
+      margin-bottom: 14px;
+    }
+
+    .lead {
+      font-size: 1.08rem;
+      line-height: 1.9;
+      color: #775f71;
+      margin-bottom: 18px;
+    }
+
+    .frase {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #fff0f7, #ffe1ef);
+      font-weight: 800;
+      color: #d93f83;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 13px 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
+
+    .main {
+      background: linear-gradient(135deg, #ff4f93, #ff7ab0);
+      color: #fff;
+    }
+
+    .soft {
+      background: #fff;
+      color: #5c4352;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px) scale(1.02);
+    }
+
+    @media (max-width: 860px) {
+      .contenido {
+        grid-template-columns: 1fr;
+      }
+
+      .wrap {
+        border-radius: 24px;
+      }
+    }
+    /* ===== OPTIMIZACIÓN PARA TELÉFONO ===== */
+@media (max-width: 768px) {
+  body {
+    padding: 14px;
+  }
+
+  .wrap,
+  .shell {
+    width: 100%;
+    padding: 16px;
+    border-radius: 22px;
+  }
+
+  .hero,
+  .contenido,
+  .final,
+  .letter,
+  .grid,
+  .reasons {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+
+  .hero-copy,
+  .panel,
+  .card,
+  .mini {
+    padding: 20px !important;
+    border-radius: 22px;
+  }
+
+  h1 {
+    font-size: clamp(1.9rem, 8vw, 2.8rem) !important;
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-size: 1.15rem !important;
+  }
+
+  .lead,
+  .text,
+  .mensaje,
+  .hero-copy p,
+  .mini p,
+  .reason p {
+    font-size: 1rem !important;
+    line-height: 1.7 !important;
+  }
+
+  .nav,
+  .top {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .nav-links,
+  .links,
+  .actions,
+  .btn-row,
+  .cta,
+  .cta-row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .nav a,
+  .chip,
+  .btn,
+  .btn-main,
+  .btn-soft,
+  .btn-primary,
+  .btn-secondary,
+  .main,
+  .soft {
+    width: 100%;
+    min-height: 48px;
+    text-align: center;
+    justify-content: center;
+    font-size: 1rem !important;
+    padding: 14px 18px !important;
+  }
+
+  .brand {
+    text-align: center;
+    font-size: 1.7rem !important;
+  }
+
+  .hero-visual img,
+  .panel img,
+  .photo img,
+  .stitch img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 22px;
+  }
+
+  .quote,
+  .note,
+  .frase,
+  .destacado,
+  .highlight {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    padding: 14px 16px;
+    border-radius: 18px;
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="corazones" aria-hidden="true">
+    <span>💗</span>
+    <span>💕</span>
+    <span>🌸</span>
+    <span>💖</span>
+    <span>✨</span>
+  </div>
+
+  <main class="wrap">
+    <div class="nav">
+      <div class="brand">Un mensajito más</div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a href="pagina5.html">Anterior</a>
+        <a href="pagina7.html">Siguiente</a>
+      </div>
+    </div>
+
+    <section class="contenido">
+      <article class="panel">
+        <h1>Solo quería recordarte algo bonito.</h1>
+        <p class="lead">
+          A veces uno no sabe exactamente cómo alegrarle el día a alguien,
+          pero igual lo intenta. Y si esta página logra sacarte aunque sea
+          una pequeña sonrisa, entonces ya habrá valido muchísimo la pena.
+        </p>
+        <p class="lead">
+          Porque hay personas que inspiran ternura, cariño y ganas de hacer
+          detalles lindos sin necesidad de una fecha especial. Tú tienes eso.
+        </p>
+
+        <div class="frase">
+          Si hoy necesitas una razón para sonreír, aquí tienes una:
+          eres alguien muy especial. 💖
+        </div>
+
+        <div class="actions">
+          <a class="btn main" href="pagina7.html">Continuar</a>
+          <a class="btn soft" href="index.html">Volver al inicio</a>
+        </div>
+      </article>
+
+      <div class="panel">
+        <img src="img/stich saludando.png" alt="Stitch saludando con ternura" width="800" height="800" loading="eager">
+      </div>
+    </section>
+  </main>
+</body>
+</html>
